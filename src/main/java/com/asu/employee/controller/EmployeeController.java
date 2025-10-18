@@ -29,6 +29,11 @@ public class EmployeeController {
 		this.employeeService=employeeService;
 	}
 	
+	@GetMapping("/hello")
+	public String hello() {
+		return "Hello";
+	}
+	
 	@PostMapping("/add")
 	public ResponseEntity<EmployeeResponse> createEmployee(@Valid @RequestBody EmployeeRequest req){
 	EmployeeResponse created=employeeService.addEmployee(req);
