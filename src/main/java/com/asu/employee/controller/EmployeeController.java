@@ -62,5 +62,10 @@ public class EmployeeController {
 		employeeService.deleteEmployee(id);
 		return ResponseEntity.ok("Emplpoyee Deleted successfully....");
 	}
+	
+	@GetMapping("/max")
+	public List<EmployeeResponse> findMaxSalary(){
+		return employeeService.getMaxSalaryEmployee();
+	}
 
 }

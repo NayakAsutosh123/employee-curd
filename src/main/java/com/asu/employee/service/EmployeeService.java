@@ -64,6 +64,10 @@ public class EmployeeService {
 		employeeRepository.deleteById(id);
 		return "Employee deleted successfully";
 	}
+	
+	public List<EmployeeResponse> getMaxSalaryEmployee() {
+		return employeeRepository.findMaxSalaryEmployee();
+	}
 
 	private EmployeeResponse mapToResponse(Employee e) {
 		return new EmployeeResponse(e.getId(),e.getName(),e.getEmail(),e.getSalary());
